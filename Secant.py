@@ -19,17 +19,15 @@ def secant(x0, x1, e, N):
             break
 
         x2 = x0 - (x1-x0) * f(x0)/(f(x1) - f(x0))
-        print('Iterasi ke-%d, x2 = %0.10f, f(x2) = %0.10f' % (iterasi, x1, f(x1)))
+        print('Iterasi ke-%d, x2 = %0.10f, f(x2) = %0.10f' % (iterasi, x2, f(x2)))
         x0 = x1
         x1 = x2
         iterasi = iterasi + 1
 
-        # perulangan berhenti jika nilai iterasi lebih dari N
         if iterasi > N:
-            print('tidak konvergen')
             break
 
-        condition = abs(f(x1)) > e
+        condition = abs(f(x2)) > e
 
     print('\nNilai akar: %0.10f' % x2)
 
